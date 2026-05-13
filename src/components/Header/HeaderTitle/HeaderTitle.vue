@@ -1,7 +1,11 @@
+<script setup>
+import { getPublicAssetUrl } from "@/helpers/getPublicAssetUrl";
+</script>
+
 <template>
   <div class="headerTitle">
     <img
-      src="/assets/icons/HeaderIcons/HeaderIcon.svg"
+      :src="getPublicAssetUrl('assets/icons/HeaderIcons/HeaderIcon.svg')"
       alt="Иконка"
       class="icon"
     />

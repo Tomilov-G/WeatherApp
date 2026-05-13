@@ -3,6 +3,7 @@ import { useTheme } from "@/composables/useTheme";
 import { useToggle } from "@/composables/useToggle";
 import HeaderDropdownList from "./HeaderDropdownList/HeaderDropdownList.vue";
 import { useCityOfWeatherStore } from "@/stores/useCityOfWeatherStore";
+import { getPublicAssetUrl } from "@/helpers/getPublicAssetUrl";
 
 const { defaultTheme, toggleChangeTheme } = useTheme();
 const { initialBooleanState, toggleBooleanState, resetBooleanState } = useToggle();
@@ -19,7 +20,7 @@ const switchCity = (city) => {
 <template>
   <div class="headerDropdown">
     <img
-      src="/assets/icons/HeaderIcons/ChangeColorIcon.svg"
+      :src="getPublicAssetUrl('assets/icons/HeaderIcons/ChangeColorIcon.svg')"
       alt="Иконка"
       class="icon"
       @click="toggleChangeTheme"
@@ -30,14 +31,14 @@ const switchCity = (city) => {
         <span>{{ store.selectedCity?.city ?? "Загрузка..."  }}</span>
         <img
           v-if="defaultTheme === 'dark'"
-          src="/assets/icons/HeaderIcons/ArrowDown.svg"
+          :src="getPublicAssetUrl('assets/icons/HeaderIcons/ArrowDown.svg')"
           alt="Иконка"
           class="arrowIcon"
           :class="{ dropdownOpen: initialBooleanState }"
         />
         <img
           v-else
-          src="/assets/icons/HeaderIcons/ArrowDownDark.svg"
+          :src="getPublicAssetUrl('assets/icons/HeaderIcons/ArrowDownDark.svg')"
           alt="Иконка"
           class="arrowIcon"
           :class="{ dropdownOpen: initialBooleanState }"

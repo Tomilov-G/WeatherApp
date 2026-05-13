@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import DescriptionOfWeatherItem from "./DescriptionOfWeatherItem/DescriptionOfWeatherItem.vue";
 import { useWeatherView } from "@/composables/useWeatherView";
+import { getPublicAssetUrl } from "@/helpers/getPublicAssetUrl";
 
 const {
   temperature,
@@ -49,25 +50,25 @@ const formatWindDescription = () => {
 const itemsOfWeather = computed(() => [
   {
     id: 1,
-    url: "/assets/icons/MainIcons/ThermometerIcon.svg",
+    url: getPublicAssetUrl("assets/icons/MainIcons/ThermometerIcon.svg"),
     view: "Температура",
     description: formatTemperatureDescription(),
   },
   {
     id: 2,
-    url: "/assets/icons/MainIcons/PressureIcon.svg",
+    url: getPublicAssetUrl("assets/icons/MainIcons/PressureIcon.svg"),
     view: "Давление",
     description: formatPressureDescription(),
   },
   {
     id: 3,
-    url: "/assets/icons/MainIcons/PrecipitationIcon.svg",
+    url: getPublicAssetUrl("assets/icons/MainIcons/PrecipitationIcon.svg"),
     view: "Осадки",
     description: formatPrecipitationDescription(),
   },
   {
     id: 4,
-    url: "/assets/icons/MainIcons/WindIcon.svg",
+    url: getPublicAssetUrl("assets/icons/MainIcons/WindIcon.svg"),
     view: "Ветер",
     description: formatWindDescription(),
   },
@@ -84,7 +85,11 @@ const itemsOfWeather = computed(() => [
         :description="item.description"
       />
     </div>
-    <img src="/assets/images/Cloud.png" alt="Изображение" class="cloudImage" />
+    <img
+      :src="getPublicAssetUrl('assets/images/Cloud.png')"
+      alt="Изображение"
+      class="cloudImage"
+    />
   </div>
 </template>
 

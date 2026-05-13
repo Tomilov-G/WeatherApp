@@ -2,9 +2,10 @@ import { defineStore } from "pinia";
 import { ref, watch } from "vue";
 import { useFetch } from "@/composables/useFetch";
 import { getCityNameByIp } from "@/helpers/getCityNameByIp";
+import { getPublicAssetUrl } from "@/helpers/getPublicAssetUrl";
 
 export const useCityOfWeatherStore = defineStore("cities", () => {
-  const url = ref("/data.json");
+  const url = ref(getPublicAssetUrl("data.json"));
   const { data, isLoading, error } = useFetch(url);
 
   const cities = ref([]);

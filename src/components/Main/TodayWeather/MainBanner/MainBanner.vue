@@ -3,6 +3,7 @@ import { computed } from "vue";
 import { useCityOfWeatherStore } from "@/stores/useCityOfWeatherStore";
 import { useWeatherView } from "@/composables/useWeatherView";
 import Loader from "@/ui/Loader.vue";
+import { getPublicAssetUrl } from "@/helpers/getPublicAssetUrl";
 
 const cityStore = useCityOfWeatherStore();
 const { temperature, time, descriptionOfPrecipitation } = useWeatherView();
@@ -18,7 +19,7 @@ const hasTemperature = computed(() => {
 const weatherIcon = computed(() => {
   return (
     descriptionOfPrecipitation.value?.url ??
-    "/assets/icons/MainIcons/CloudyIcon.svg"
+    getPublicAssetUrl("assets/icons/MainIcons/CloudyIcon.svg")
   );
 });
 </script>
