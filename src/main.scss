@@ -1,3 +1,17 @@
 @use "normalize.css";
 @use "./styles/fonts.scss";
 @use "./styles/variables.scss";
+
+*,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--color-background-default);
+  font-family: $font-family-base;
+  color: var(--text-color-default);
+  transition: 0.3s ease-in-out;
+  color: 0.3s ease;
+}

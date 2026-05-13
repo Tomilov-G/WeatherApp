@@ -1,8 +1,41 @@
 // colors
 $color-blue: #4793ff;
 $color-dark-theme: #0d1117;
+$color-dark: #2e3035;
 $color-light-theme: #ffffff;
 $color-dark-grey: #4f4f4f;
+$color-light-grey: #939cb0;
+
+// components-color
+$mainComponent-background-dark: #4f4f4f;
+$mainComponent-background-light: #ffffff;
+
+$forecastCard-background-dark: #2e3035;
+$forecastCard-background-light: #4793ff33;
+
+$text-color-dark: #ffffff;
+$text-color-light: #0d1117;
 
 // fonts
 $font-family-base: "Montserrat", system-ui, -apple-system, sans-serif;
+
+// shadow
+$shadow-color: 2px 5px 25px -3px #b4b4b440;
+
+:root {
+  --color-background-dark: #{$color-dark-theme};
+  --color-background-light: #{$color-light-theme};
+  --color-background-default: var(--color-background-light);
+
+  --forecastCard-background-dark: #{$forecastCard-background-dark};
+  --forecastCard-background-light: #{$forecastCard-background-light};
+  --forecastCard-background-default: var(--forecastCard-background-light);
+
+  --mainComponent-background-dark: #{$mainComponent-background-dark};
+  --mainComponent-background-light: #{$mainComponent-background-light};
+  --mainComponent-background-default: var(--mainComponent-background-light);
+
+  --text-color-dark: #{$text-color-dark};
+  --text-color-light: #{$text-color-light};
+  --text-color-default: var(--text-color-light);
+}
